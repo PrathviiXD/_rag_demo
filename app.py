@@ -65,8 +65,7 @@ if uploaded_file:
 
             embeddings = model_emb.encode(texts).astype("float32")
 
-            embeddings = np.array(embeddings).reshape(-1, embeddings.shape[-1])
-index = faiss.IndexFlatL2(embeddings.shape[1])
+            index = faiss.IndexFlatL2(embeddings.shape[1])
 
             index.add(embeddings)
 
